@@ -1,7 +1,13 @@
 import React from 'react';
 
 export default function RobuxStore() {
-  const [adminMode, setAdminMode] = React.useState(window.location.pathname === '/admin');
+  const [adminMode, setAdminMode] = React.useState(false);
+
+React.useEffect(() => {
+  if (typeof window !== 'undefined') {
+    setAdminMode(window.location.pathname === '/admin');
+  }
+}, []);
 
   const orders = [
     { user: 'Player123', package: '400 Robux', status: 'Pending' },
@@ -80,7 +86,7 @@ export default function RobuxStore() {
 
             <section className="mt-16 bg-slate-900 rounded-2xl p-8">
               <h3 className="text-2xl font-bold mb-4">QR Payment</h3>
-              <img src="/mnt/data/image.png" alt="QR Payment" className="rounded-xl max-w-xs mx-auto" />
+              <img src="https://via.placeholder.com/300x300?text=TNG+QR" alt="QR Payment" className="rounded-xl max-w-xs mx-auto" />
             </section>
           </>
         )}
