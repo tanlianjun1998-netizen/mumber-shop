@@ -1,6 +1,6 @@
 import React from 'react';
 import { collection, addDoc } from "firebase/firestore";
-import { db } from "./firebase";
+import { db } from "../firebase";
 
 export default function RobuxStore() {
   const [adminMode, setAdminMode] = React.useState(false);
